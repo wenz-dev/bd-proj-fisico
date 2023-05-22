@@ -1,0 +1,8 @@
+crie os seguintes scripts SQL/DML:
+
+Inclusão de 5 registros para cada tabela;
+Duas consultas simples, envolvendo apenas uma tabela (primária ou secundária);
+Duas consultas envolvendo duas ou mais tabelas primárias e secundárias;
+Uma consulta envolvendo mais de 3 tabelas;
+Uma alteração de dados em uma tabela;
+Uma exclusão de dados em uma tabela.
