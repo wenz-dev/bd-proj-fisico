@@ -14,13 +14,13 @@ CREATE TABLE PACIENTES (
     id_paciente SMALLINT PRIMARY KEY,
     nome_pac VARCHAR(40),
     endereco_pac VARCHAR(100),
-    telefone_pac BIGINT(14)
+    telefone_pac BIGINT
 );
 
 CREATE TABLE MEDICOS (
     crm VARCHAR(12) PRIMARY KEY,
     nome_med VARCHAR(40),
-    telefone_med BIGINT(14)
+    telefone_med BIGINT
 );
 
 CREATE TABLE EXAMES (
@@ -30,7 +30,7 @@ CREATE TABLE EXAMES (
 
 CREATE TABLE RECEITAS (
     num_receita SMALLINT PRIMARY KEY,
-    data_receita DATETIME
+    data_receita TIMESTAMP
 );
 
 CREATE TABLE DIAGNOSTICOS_Consulta (
