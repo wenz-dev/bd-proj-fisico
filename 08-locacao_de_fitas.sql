@@ -2,34 +2,34 @@
 
 CREATE TABLE DEPENDENTES (
     grauParentesco VARCHAR,
-    idCliente INT
+    idCliente INT NOT NULL
 );
 
 CREATE TABLE CLIENTES (
     nome VARCHAR(40),
-    idCliente INT PRIMARY KEY,
+    idCliente INT PRIMARY KEY NOT NULL,
     idAtor INT
 );
 
 CREATE TABLE FITAS (
-    numero INT PRIMARY KEY,
+    numero INT PRIMARY KEY NOT NULL,
     idFilme SMALLINT
 );
 
 CREATE TABLE ATORES (
-    idAtor INT PRIMARY KEY,
+    idAtor INT PRIMARY KEY NOT NULL,
     nomeReal CHAR,
     dataNasc DATE
 );
 
 CREATE TABLE FILMES (
-    idFilme SMALLINT PRIMARY KEY,
+    idFilme SMALLINT PRIMARY KEY NOT NULL,
     titulo CHAR,
     idCategoria SMALLINT
 );
 
 CREATE TABLE CATEGORIAS (
-    idCategoria SMALLINT PRIMARY KEY,
+    idCategoria SMALLINT PRIMARY KEY NOT NULL,
     nome CHAR
 );
 
