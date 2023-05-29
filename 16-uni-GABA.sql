@@ -19,7 +19,7 @@ CREATE TABLE ALUNOS (
 CREATE TABLE DEPENDENTES (
     nome_depend VARCHAR(30),
     cod_dependente SMALLINT(4) PRIMARY KEY,
-    data_nascimento TIMESTAMP,
+    data_nascimento TIMESTAMP,  
     matricula SMALLINT(6),
     FOREIGN KEY (matricula)
         REFERENCES FUNCIONARIOS (matricula_func)

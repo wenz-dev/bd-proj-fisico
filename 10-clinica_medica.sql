@@ -39,37 +39,27 @@ CREATE TABLE DIAGNOSTICOS_Consulta (
     id_paciente SMALLINT,
     data DATE,
     hora TIME,
-    PRIMARY KEY (data, hora)
+    PRIMARY KEY (data, hora),
+    FOREIGN KEY (crm)
+        REFERENCES MEDICOS (crm);   
+    FOREIGN KEY (id_paciente)
+        REFERENCES PACIENTES (id_paciente);
 );
 
 CREATE TABLE Composicao (
     id_medicamento SMALLINT,
-    num_receita SMALLINT
+    num_receita SMALLINT,
+    FOREIGN KEY (id_medicamento)
+        REFERENCES MEDICAMENTOS (id_medicamento)
+        ON DELETE RESTRICT,
+    FOREIGN KEY (num_receita)
+        REFERENCES RECEITAS (num_receita)
+        ON DELETE SET NULL
 );
 
 CREATE TABLE ocorrencia (
-    id_patologia SMALLINT
-);
- 
-ALTER TABLE DIAGNOSTICOS_Consulta ADD CONSTRAINT FK_DIAGNOSTICOS_Consulta_2
-    FOREIGN KEY (crm)
-    REFERENCES MEDICOS (crm);
- 
-ALTER TABLE DIAGNOSTICOS_Consulta ADD CONSTRAINT FK_DIAGNOSTICOS_Consulta_3
-    FOREIGN KEY (id_paciente)
-    REFERENCES PACIENTES (id_paciente);
- 
-ALTER TABLE Composicao ADD CONSTRAINT FK_Composicao_1
-    FOREIGN KEY (id_medicamento)
-    REFERENCES MEDICAMENTOS (id_medicamento)
-    ON DELETE RESTRICT;
- 
-ALTER TABLE Composicao ADD CONSTRAINT FK_Composicao_2
-    FOREIGN KEY (num_receita)
-    REFERENCES RECEITAS (num_receita)
-    ON DELETE SET NULL;
- 
-ALTER TABLE ocorrencia ADD CONSTRAINT FK_ocorrencia_1
+    id_patologia SMALLINT,
     FOREIGN KEY (id_patologia)
-    REFERENCES PATOLOGIA (id_patologia)
-    ON DELETE SET NULL;
+        REFERENCES PATOLOGIA (id_patologia)
+        ON DELETE SET NULL;
+);

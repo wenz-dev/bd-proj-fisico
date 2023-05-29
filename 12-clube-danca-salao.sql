@@ -20,25 +20,19 @@ CREATE TABLE AULAS (
     tipo_aula VARCHAR(15),
     tipo_danca VARCHAR(15),
     cod_prof TINYINT(3),
-    data_hora TIMESTAMP
+    data_hora TIMESTAMP,
+    FOREIGN KEY (cod_prof)
+        REFERENCES PROFESSORES (cod_prof)
+        ON DELETE CASCADE
 );
 
 CREATE TABLE Frequenta (
     id_estudante SMALLINT(5),
-    id_aula TINYINT(3)
-);
- 
-ALTER TABLE AULAS ADD CONSTRAINT FK_AULAS_2
-    FOREIGN KEY (cod_prof)
-    REFERENCES PROFESSORES (cod_prof)
-    ON DELETE CASCADE;
- 
-ALTER TABLE Frequenta ADD CONSTRAINT FK_Frequenta_1
+    id_aula TINYINT(3),
     FOREIGN KEY (id_estudante)
-    REFERENCES ESTUDANTES (id_estudante)
-    ON DELETE SET NULL;
- 
-ALTER TABLE Frequenta ADD CONSTRAINT FK_Frequenta_2
+        REFERENCES ESTUDANTES (id_estudante)
+        ON DELETE SET NULL;
     FOREIGN KEY (id_aula)
-    REFERENCES AULAS (id_aula)
-    ON DELETE SET NULL;
+        REFERENCES AULAS (id_aula)
+        ON DELETE SET NULL;
+);
