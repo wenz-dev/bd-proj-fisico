@@ -42,19 +42,19 @@ CREATE TABLE FILMES (
 
 CREATE TABLE CATEGORIAS (
     idCategoria SMALLINT PRIMARY KEY NOT NULL,
-    nome CHAR
+    nomeCat CHAR
 );
 
 CREATE TABLE Locacao (
     numero INT,
     idCliente INT,
-    dataDevolucao TIMESTAMP,
     dataLocacao TIMESTAMP,
+    dataDevolucao TIMESTAMP,
     FOREIGN KEY (numero)
         REFERENCES FITAS (numero)
         ON DELETE RESTRICT,
     FOREIGN KEY (idCliente)
-        REFERENCES CLIENTES (idCliente)
+        REFERENCES CLIENTES     (idCliente)
         ON DELETE SET NULL
 );
 
