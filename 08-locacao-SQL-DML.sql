@@ -30,68 +30,36 @@
 
 INSERT INTO DEPENDENTES (grauParentesco, idCliente)
     VALUES 
-        ("", ),
-        ("", ),
-        ("", ),
-        ("", ),
-        ("", );
+        ("", ), ("", ), ("", ), ("", ), ("", );
 
 
 INSERT INTO CLIENTES (nome, idCliente, idAtor)
     VALUES 
-        ("", , ),
-        ("", , ),
-        ("", , ),
-        ("", , ),
-        ("", , );
+        ("", , ),("", , ),("", , ),("", , ),("", , );
 
 INSERT INTO FITAS (numero, idFilme)
     VALUES 
-        (, ),
-        (, ),
-        (, ),
-        (, ),
-        (, );
+        (, ),(, ),(, ),(, ),(, );
 
 INSERT INTO ATORES (idAtor, nomeReal, dataNasc)
     VALUES 
-        (, "", //),
-        (, "", //),
-        (, "", //),
-        (, "", //),
-        (, "", //);
+        (, "", //),(, "", //),(, "", //),(, "", //),(, "", //);
 
 INSERT INTO FILMES (idFilme, titulo, idCategoria)
     VALUES 
-        (, "", ),
-        (, "", ),
-        (, "", ),
-        (, "", ),
-        (, "", );
+        (, "", ),(, "", ),(, "", ),(, "", ),(, "", );
 
 INSERT INTO CATEGORIAS (idCategoria, nomeCat)
     VALUES 
-        (, ""),
-        (, ""),
-        (, ""),
-        (, ""),
-        (, "");
+        (, ""),(, ""),(, ""),(, ""),(, "");
 
 INSERT INTO Locacao (numero, idCliente, dataLocacao, dataDevolucao)
     VALUES 
-        (, , //, //),
-        (, , //, //),
-        (, , //, //),
-        (, , //, //),
-        (, , //, //);
+        (, , //, //),(, , //, //),(, , //, //),(, , //, //),(, , //, //);
 
 INSERT INTO Estrela (idFilme, idAtor)
     VALUES 
-        (, ),
-        (, ),
-        (, ),
-        (, ),
-        (, );
+        (, ),(, ),(, ),(, ),(, );
 
 /* 2 consultas simples abaixo */
 SELECT nomeReal, dataNasc FROM ATORES; 
